@@ -1,0 +1,25 @@
+{
+  "name": "Halda",
+  "description": "Frontend for the Halda app. A bookmarking app",
+  "homepage": "https://github.com/k2052/halda-frontend",
+  "keywords": ["bookmarking"],
+  "author": "K-2052 <k@2052.me>",
+  "main": "dist/Halda.js",
+  "repository": {
+    "type": "git",
+    "url": "git://git://github.com/k2052/halda-frontend.git"
+  },
+  "version": "0.0.5",
+  "direct": true,
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "underscore": "~1.5.0"
+  },
+  "devDependencies": {
+    "sinon": "~1.7.0",
+    "chai": "~1.6.0",
+    "chai-jquery": "~1.1.0",
+    "mocha": "~1.9.0",
+    "sinon-chai": "~2.4.0"
+  }
+}

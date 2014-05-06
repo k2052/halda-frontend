@@ -1,0 +1,2 @@
+Halda = {}
+module.exports = Halda
