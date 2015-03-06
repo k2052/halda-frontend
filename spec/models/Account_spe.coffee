@@ -1,5 +1,4 @@
 Account = require("../../lib/models/Account")
-Ryggrad = require("ryggrad")
 
 describe "Account", ->
   beforeEach ->

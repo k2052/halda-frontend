@@ -1,4 +1,5 @@
+Halda = require("../../lib/Halda")
+
 describe "Halda", ->
   it "is healthy", ->
-    foo = 'bar'
-    foo.should.equal('bar')
+    Halda.version.should.equal "0.0.1"

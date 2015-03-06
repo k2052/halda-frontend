@@ -37,6 +37,11 @@ module.exports = (grunt) ->
         options:
           standalone: 'Halda'
           external: [require.resolve('jquery'), require.resolve('underscore')]
+      test:
+        files:
+          'test/spec/spec.js': ['test/spec/spec.js']
+        options:
+          debug: true
 
     coffee:
       node:
@@ -69,17 +74,21 @@ module.exports = (grunt) ->
       test:
         src: [ 'test/test.html' ],
         options:
+          log: true
+
           # Select a Mocha reporter
           # http://visionmedia.github.com/mocha/#reporters
-          reporter: 'Spec',
+          reporter: 'Spec'
 
           # Indicates whether 'mocha.run()' should be executed in
           # 'bridge.js'. If you include `mocha.run()` in your html spec,
           # check if environment is PhantomJS. See example/test/test2.html
-          run: true,
+          run: true
 
           # Override the timeout of the test (default is 5000)
           timeout: 10000
+          ui: "bdd"
+          ignoreLeaks: false
 
     stylus:
       compile:
@@ -97,5 +106,5 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'browser', ['coffee:node', 'browserify:debug', 'browserify:full', 'browserify:dist']
   grunt.registerTask 'dist', ['browser', 'uglify']
-  grunt.registerTask 'spec', ['browser', 'coffee:test', 'mocha:test']
+  grunt.registerTask 'spec', ['browser', 'coffee:test', 'browserify:test', 'mocha:test']
   grunt.registerTask 'default', ['spec']
